@@ -47,4 +47,21 @@ namespace FourthWingRPG
             Console.WriteLine($"{Name} attacks you for {Attack} damage!");
         }
     }
+
+    static class PlayerExtensions
+    {
+        public static void LevelUp(this Player player)
+        {
+            if (player.XP >= 100)
+            {
+                player.Level++;
+                player.XP = 0;
+                player.Health += 20;
+                player.Mana += 10;
+                player.Attack += 5;
+                player.Defense += 3;
+                Console.WriteLine($"{player.Name} leveled up to level {player.Level}!");
+            }
+        }        
+    }
 }
