@@ -64,4 +64,28 @@ namespace FourthWingRPG
             }
         }        
     }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to Fourth Wing RPG!");
+            Console.Write("Enter your character's name:");
+            string playerName = Console.ReadLine();
+            Player player = new Player(playerName);
+
+            GameLoop(player);
+        }
+
+        static void GameLoop(Player player)
+        {
+            Console.Clear();
+            bool gameRunning = true;
+
+            while (gameRunning)
+            {
+                
+            }
+        }
+    }
 }
