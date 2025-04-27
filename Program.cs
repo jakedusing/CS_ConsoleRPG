@@ -84,7 +84,28 @@ namespace FourthWingRPG
 
             while (gameRunning)
             {
-                
+                Console.Clear();
+                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("1. Check stats");
+                Console.WriteLine("2. Explore the academy");
+                Console.WriteLine("3. Fight a dragon!");
+                Console.WriteLine("4. Exit the game");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        player.DisplayStats();
+                        break;
+                    case "4":
+                        Console.WriteLine("Thank you for playing! Goodbye.");
+                        gameRunning = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option. Try again.");
+                        break;
+                }
             }
         }
     }
