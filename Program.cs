@@ -98,6 +98,9 @@ namespace FourthWingRPG
                     case "1":
                         player.DisplayStats();
                         break;
+                    case "2":
+                        ExploreAcademy();
+                        break;
                     case "4":
                         Console.WriteLine("Thank you for playing! Goodbye.");
                         gameRunning = false;
@@ -106,7 +109,19 @@ namespace FourthWingRPG
                         Console.WriteLine("Invalid option. Try again.");
                         break;
                 }
+
+                if (player.Health <= 0)
+                {
+                    Console.WriteLine("You have died. Game Over.");
+                    gameRunning = false;
+                }
             }
+        }
+
+        static void ExploreAcademy()
+        {
+            Console.WriteLine("You walk through the grand halls of the academy. The sound of dragons fills the air");
+            Console.WriteLine("You meet a fellow student who tells you about a secret quest that could help you gain power.");
         }
     }
 }
