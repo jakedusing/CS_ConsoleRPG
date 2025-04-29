@@ -123,5 +123,20 @@ namespace FourthWingRPG
             Console.WriteLine("You walk through the grand halls of the academy. The sound of dragons fills the air");
             Console.WriteLine("You meet a fellow student who tells you about a secret quest that could help you gain power.");
         }
+
+        static void FightDragon(Player player)
+        {
+            Enemy dragon = new Enemy("Rogue Dragon", 50, 10);
+            Console.WriteLine($"A {dragon.Name} appears! Prepare for battle!");
+
+            while (dragon.Health > 0 && player.Health > 0)
+            {
+                Console.WriteLine("\nChoose your action:");
+                Console.WriteLine("1. Attack");
+                Console.WriteLine("2. Heal");
+                Console.WriteLine("3. Defend");
+                string action = Console.ReadLine();
+            }
+        }
     }
 }
