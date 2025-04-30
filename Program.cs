@@ -136,6 +136,18 @@ namespace FourthWingRPG
                 Console.WriteLine("2. Heal");
                 Console.WriteLine("3. Defend");
                 string action = Console.ReadLine();
+
+                if (action == "1")
+                {
+                    dragon.Health -= player.Attack;
+                    Console.WriteLine($"You attack the {dragon.Name} for {player.Attack} damage!");
+                }
+                else if (action == "2" && player.Mana >= 10)
+                {
+                    player.Health += 20;
+                    player.Mana -= 10;
+                    Console.WriteLine($"You cast a healing spell and recover 20 health. Health is now {player.Health}");
+                }
             }
         }
     }
